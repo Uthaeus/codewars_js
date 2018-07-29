@@ -113,4 +113,7 @@ function SubtractSum(n){
 
 
 
-console.log(SubtractSum(10)) //, "apple"
+console.log(SubtractSum(10)); //, "apple"
+console.log(SubtractSum(355));
+console.log(SubtractSum(460));
+console.log(SubtractSum(86));
