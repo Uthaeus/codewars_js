@@ -3,7 +3,7 @@
 
 function twoDecimalPlaces(n) {
   // Your code here
-  return (Math.round(n * 100) / 100).toFixed(2)
+  return +(Math.round(n * 100) / 100).toFixed(2);
 }
 
 
