@@ -1,11 +1,20 @@
-function frankenSplice(arr1, arr2, n) {
-  // It's alive. It's alive!
-  var front = arr2.slice(0, n);
-  var back = arr2.slice(n, arr2.length);
-  let result = [...front, ...arr1, ...back];
+function diffArray(arr1, arr2) {
+  let result = [];
+  let long, short;
 
+  if (arr1.length < arr2.length) {
+    long = arr2;
+    short = arr1;
+  } else {
+    long = arr1;
+    short = arr2;
+  }
+  for (var i = 0; i < long.length; i++) {
+    if (!short.includes(long[i])) {
+      result.push(long[i]);
+    }
+  }
   return result;
 }
 
-console.log(frankenSplice([1, 2, 3], [4, 5, 6], 1));
-console.log(frankenSplice(["claw", "tentacle"], ["head", "shoulders", "knees", "toes"], 2));
+console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
