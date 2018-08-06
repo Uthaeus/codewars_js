@@ -1,13 +1,22 @@
-function getLength(str) {
+function makeClass() {
   "use strict";
-
-  // change code below this line
-  const length = str.length;
-  const {length : len} // change this
-  // change code above this line
-
-  return len; // you must assign length to len in line
-
+  /* Alter code below this line */
+  class Thermostat {
+    constructor(temp) {
+      this.temp = (5 / 9) * (temp - 32);
+    }
+    get temperature() {
+      return this.temp;
+    }
+    set temperature(newTemp) {
+      this.temp = newTemp;
+    }
+  }
+  /* Alter code above this line */
+  return Thermostat;
 }
-
-console.log(getLength('FreeCodeCamp'));
+const Thermostat = makeClass();
+const thermos = new Thermostat(76); // setting in Fahrenheit scale
+let temp = thermos.temperature; // 24.44 in C
+thermos.temperature = 26;
+temp = thermos.temperature; // 26 in C
