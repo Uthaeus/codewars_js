@@ -3,6 +3,22 @@
 
 function dateNbDays(a0, a, p) {
   // your code
+  let startDate = new Date(Date.parse('2016/01/01'));
+  let wanted = a - a0;
+  let int = (p / 100) / 360;
+  let days = 0;
+
+  while (a0 <= a) {
+    a0 += a0 * int;
+    days++;
+  }
+  let expDate = startDate;
+  expDate.setDate(startDate.getDate() + days);
+
+  let result = expDate.toLocaleDateString();
+  result = result.split('/').reverse().join('-');
+  //return result.replace(/[/]/g, '-');
+  return result;
 }
 
 
