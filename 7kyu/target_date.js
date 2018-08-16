@@ -16,11 +16,18 @@ function dateNbDays(a0, a, p) {
   expDate.setDate(startDate.getDate() + days);
 
   let result = expDate.toLocaleDateString();
-  result = result.split('/').reverse().join('-');
-  //return result.replace(/[/]/g, '-');
-  return result;
+  result = result.split('/');
+  result.unshift(result.pop());
+
+  for (var i = 0; i < result.length; i++) {
+    if (result[i].length < 2) {
+      result[i] = '0' + result[i];
+    }
+  }
+  return result.join('-');
 }
 
 
 
 console.log(dateNbDays(4620, 5188, 2)) //, "2021-09-19"
+console.log(dateNbDays(4281, 5087, 2)) //, "2024-07-03")
