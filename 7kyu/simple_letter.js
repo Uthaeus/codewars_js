@@ -6,23 +6,6 @@ function solve(s, k){
   let alph = 'abcdefghijklmnopqrstuvwxyz';
   let alphCount = 0;
 
-  // while (s.length > 0) {
-  //   for (var i = 0; i < s.length; i++) {
-  //     if (s[i] == alph[alphCount]) {
-  //       s = s.slice(0, i) + s.slice(i + 1);
-  //       k--;
-  //       break;
-  //     }
-  //     if (k === 0) {
-  //       return s;
-  //     }
-  //   }
-  //   if (!s.includes(alph[alphCount])) {
-  //     alphCount++;
-  //   }
-  // }
-  // return s;
-
   while (s.length > 0 && k > 0) {
     if (!s.includes(alph[alphCount])) {
       alphCount++;
