@@ -5,27 +5,16 @@ function posAverage(s) {
     let strArr = s.replace(/\s/g, '').split(',');
     let count = 0;
     let total = strArr.length * strArr[0].length;
-
-    // for (let x = 0; x < strArr.length; x++) {
-    //     for (let i = 0; i < strArr[x].length; i++) {
-    //         if (count[i]) {
-    //             count[i].push(strArr[x][i]);
-    //         } else {
-    //             count[i] = [strArr[x][i]];
-    //         }
-    //     }
-    // }
-    // return count;
     for (let x = 0; x < strArr.length - 1; x++) {
         for (let i = 0; i < strArr[x].length; i++) {
             if (strArr[x][i] == strArr[x + 1][i]) {
                 count++;
             }
-            total++;
         }
     }
     
-    return count / total 
+    let result = (count / total) * 100;
+    return result.toFixed(10);
 }
 
 
