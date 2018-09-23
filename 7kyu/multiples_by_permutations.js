@@ -3,7 +3,7 @@
 
 function findLowestInt(k) {
     // your code here
-    let k2 = k + 1, result; 
+    let k2 = k + 1;
 
     for (let i = 1; ; i++) {
         let temp1 = (k * i).toString().split('');
