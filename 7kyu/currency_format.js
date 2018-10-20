@@ -17,5 +17,5 @@ let price2 = 1234;
 let price3 = 123;
 let price4 = 123456789012;
 
-console.log(toCurrency(price1)); //, "123,456"
-console.log(toCurrency(price4)); //, "123,456,789,012")
+// console.log(toCurrency(price1)); //, "123,456"
+// console.log(toCurrency(price4)); //, "123,456,789,012")
