@@ -9,8 +9,13 @@
 
 function aliasGen(f, l){
     // Code Here
-  let fL = f.slice(0, 1);
-  let lL = l.slice(0, 1);
+    let fL = f[0].toUpperCase();
+    let lL = l[0].toUpperCase();
+
+    if (fL.charCodeAt(0) < 65 || fL.charCodeAt(0) > 90 || lL.charCodeAt(0) < 65 || lL.charCodeAt(0) > 90) {
+      return "Your name must start with a letter from A - Z.";
+    }
+    return `${firstName[fL]} ${surname[lL]}`;
   
 }
 
