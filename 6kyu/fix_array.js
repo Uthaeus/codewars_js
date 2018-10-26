@@ -31,11 +31,11 @@ function solve(arr){
         myArr.splice(i, 1);
       } else {
         result = [];
-        headCounter === head.length - 1 ? headCounter = 0 : headCounter += 1;
+        headCounter === heads.length - 1 ? headCounter = 0 : headCounter += 1;
        }
     } else {
       result = [];
-      headCounter === head.length - 1 ? headCounter = 0 : headCounter += 1;
+      headCounter === heads.length - 1 ? headCounter = 0 : headCounter += 1;
     }
 
   }
