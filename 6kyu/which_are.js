@@ -2,34 +2,16 @@
 
 
 function inArray(array1,array2){
-  //...
-  let result = [], inds = [];
+  let result = [];
 
-  for (let i in array1) {
-    for (var j = 0; j < array2.length; j++) {
-      if (array2[j].includes(array1[i]) && result.every(a => !a.includes(array1[i]))) {
-        result.push([array1[i], array2[j]]);
+  for (var x = 0; x < array1.length; x++) {
+    for (var i = 0; i < array2.length; i++) {
+      if (array2[i].includes(array1[x]) && !result.includes(array1[x])) {
+        result.push(array1[x]);
       }
     }
   }
-
-  result = result.sort((a, b) => a[1] - b[1]);
-
-  console.log(result);
-
-  result.sort((a, b) => {
-    if (a[1].length == b[1].length) {
-      return a[1] > b[1];
-    } else {
-      return a[1] - b[1];
-    }
-  });
-
-  console.log(result);
-  
-  let final = result.map(a => a[0]);
-
-  return final;
+  return result.sort();
 }
 
 
