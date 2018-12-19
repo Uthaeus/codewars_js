@@ -2,20 +2,37 @@
 
 
 function personalise( campaign, person){
-    let result = [];
-    let arr = campaign.split(' ');
-
-    for (var x = 0; x < arr.length; x++) {
-        let temp = arr[x].match(/<(.*)>/);
-        if (temp) {
-            let re = new RegExp(temp[0], 'g');
-            let res = arr[x].replace(re, person[temp[1].replace(' ', '_').toLowerCase()]);
-            result.push(res);
+    let result = "";
+    let adder = true;
+    let temp = "";
+    
+    for (var x = 0; x < campaign.length; x++) {
+        if (campaign[x] === '<') {
+            adder = false;
+        } 
+        if (adder) {
+            result += campaign[x]
+        } else if (campaign[x] === '>') {
+            adder = true;
+            result += person[temp.slice(1).replace(' ', '_').toLowerCase()];
+            temp = "";
         } else {
-            result.push(arr[x]);
+            temp += campaign[x];
         }
     }
     return result;
+
+    // for (var x = 0; x < arr.length; x++) {
+    //     let temp = arr[x].match(/<(.*)>/);
+    //     if (temp) {
+    //         let re = new RegExp(temp[0], 'g');
+    //         let res = arr[x].replace(re, person[temp[1].replace(' ', '_').toLowerCase()]);
+    //         result.push(res);
+    //     } else {
+    //         result.push(arr[x]);
+    //     }
+    // }
+    // return result;
 }
 
 
