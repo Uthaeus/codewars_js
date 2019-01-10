@@ -23,7 +23,7 @@ function sumFracts(l) {
         ns[x] *= temp;
     }
 
-    n = ns.reduce((a, b) => a += b);
+    n = ns.reduce((a, b) => a += b); 
 
     return n / minD === Math.floor(n / minD) ? n / minD : [n, minD];
 }
