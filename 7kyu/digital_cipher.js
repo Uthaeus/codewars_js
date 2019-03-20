@@ -20,6 +20,11 @@ function decode  (code, n) {
         result += letters[letterIndex];
     }
     return result;
+
+
+
+
+    let index = ''
 }
 
 

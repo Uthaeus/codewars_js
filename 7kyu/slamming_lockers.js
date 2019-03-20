@@ -30,6 +30,5 @@ function lockerRun(lockers){
 }
 
 
-
 console.log(lockerRun(5)); // ,[1,4])
 console.log(lockerRun(8)); //,[1,4])
