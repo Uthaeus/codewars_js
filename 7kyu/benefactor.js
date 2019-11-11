@@ -14,5 +14,4 @@ function newAvg(arr, newavg) {
 }
 
 
-
 console.log(newAvg([14, 30, 5, 7, 9, 11, 16], 90)); //, 628)

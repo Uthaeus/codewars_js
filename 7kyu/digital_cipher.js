@@ -22,9 +22,6 @@ function decode  (code, n) {
     return result;
 
 
-
-
-    let index = ''
 }
 
 
