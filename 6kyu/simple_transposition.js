@@ -12,6 +12,8 @@ function simpleTransposition(text) {
         }
     }
     return first + second;
+
+    if ()
 }
 
 
