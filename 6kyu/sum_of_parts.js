@@ -1,15 +1,12 @@
 
 
 function partsSums(ls) {
-    let result = [];
+    let total = ls.length < 1 ? 0 : ls.reduce((a, b) => a + b);
+    let result = [total];
 
-    for (let x = 0; x <= ls.length; x++) {
-      let temp = 0;
-
-      for (let y = x; y < ls.length; y++) {
-        temp += ls[y];
-      }
-      result.push(temp);
+    for (let x = 0; x < ls.length; x++) {
+      total -= ls[x];
+      result.push(total);
     }
 
     return result;
@@ -17,4 +14,5 @@ function partsSums(ls) {
 
 
 
-console.log(partsSums([0, 1, 3, 6, 10])); // [20, 20, 19, 16, 10, 0]
+//console.log(partsSums([0, 1, 3, 6, 10])); // [20, 20, 19, 16, 10, 0]
+console.log(partsSums([])); // [0]
