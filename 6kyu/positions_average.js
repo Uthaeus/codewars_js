@@ -2,22 +2,32 @@
 
 
 function posAverage(s) {
-    let strArr = s.replace(/\s/g, '').split(',');
+    let strArr = s.split(', ');
     let count = 0;
-    let total = strArr.length * strArr[0].length;
-    for (let x = 0; x < strArr.length - 1; x++) {
-        for (let i = 0; i < strArr[x].length; i++) {
-            if (strArr[x][i] == strArr[x + 1][i]) {
+
+    for (let x = 0; x < strArr[0].length; x++) {
+
+        let y = 0;
+        while (y < strArr.length - 1) {
+            if (strArr[y][x] == strArr[y + 1][x]) {
                 count++;
             }
+            y++;
         }
     }
-    
+    let total = strArr[0].length * strArr.length;
     let result = (count / total) * 100;
+
+    console.log(count, total);
+    console.log(result);
+
     return result.toFixed(10);
 }
 
 
 
-console.log(posAverage("466960, 069060, 494940, 060069, 060090, 640009, 496464, 606900, 004000, 944096"));
+//console.log(posAverage("466960, 069060, 494940, 060069, 060090, 640009, 496464, 606900, 004000, 944096"));
 //, 26.6666666667)
+
+console.log(posAverage("444996, 699990, 666690, 096904, 600644, 640646, 606469, 409694, 666094, 606490"))
+// 29.2592592593
