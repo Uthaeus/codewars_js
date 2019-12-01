@@ -2,19 +2,21 @@
 
 
 var lengthOfSequence = function (arr, n) {
-    let nums = 0, len = 0;
+    let first = arr.indexOf(n);
+    let second = arr.lastIndexOf(n) + 1;
+    let diff = second - first;
+    let nums = 0;
 
     for (let x = 0; x < arr.length; x++) {
       if (arr[x] == n) {
         nums++;
       }
-      if (nums >= 1 && nums <= 2) {
-        len++;
-      }
     }
-    return nums > 2 || nums < 1 ? 0 : len;
+
+    return nums < 2 || nums > 2 ? 0 : diff;
 };
 
 
 
 console.log(lengthOfSequence([-7, 5, 0, 2, 9, 5], 5)); //, 5)
+console.log(lengthOfSequence([-7, 6, 2, -7, 4], -7)); //, 4)
