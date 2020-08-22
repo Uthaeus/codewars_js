@@ -20,8 +20,11 @@ function solve(arr){
     }
     result.push(temp);
   }
-
+  console.log(result);
+  result = result.sort((a, b) => a[0] > b[0]);
+  console.log(result);
   result = result.sort((a, b) => a.length < b.length).join(',');
+  console.log(result);
   
   return result.split(',').map(a => +a);
 }
