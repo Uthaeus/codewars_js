@@ -31,24 +31,27 @@ function solve(time) {
 
     let first = hourText[+hours];
     
-    if (mins < 20) {
-        minWord = ones[mins];
-    } else if (mins == 15 || mins == 45) {
+    
+    if (mins == 15 || mins == 45) {
         minWord = 'quarter';
     } else if (mins == 30) {
         minWord = 'half';
+    } else if (mins < 20) {
+        minWord = ones[mins];
     } else {
         let ten = Math.floor(mins / 10);
         let one = mins % 10;
         minWord = `${tens[ten]} ${ones[one]}`;
     }
+
+    let minutes = mins < 2 ? 'minute' : 'minutes';
     
     switch (minText) {
         case "o'clock":
             return `${first} ${minText}`;
             break;
         case "past":
-            return `${minWord} minutes past ${first}`;
+            return `${minWord} ${minutes} past ${first}`;
             break;
         case "to":
             return `${minWord} to ${first}`;
