@@ -19,4 +19,6 @@ function amort(rate, bal, term, num_payments) {
 }
 
 
-console.log(amort(3.7, 64760, 36, 24)) //, "num_payment 24 c 1903 princ 1829 int 75 balance 22389"))
+console.log(amort(3.7, 64760, 36, 24)) //, "num_payment 24 c 1903 princ 1829 int 75 balance 22389"));
+
+
