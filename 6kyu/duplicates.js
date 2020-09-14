@@ -6,11 +6,13 @@ function dup(s) {
     for (let x = 0; x < s.length; x++) {
         let temp = "";
         for (let y = 0; y < s[x].length; y++) {
-            if (s[x][y] == s[x][y + 1]) {
-                temp += s[x][y];
+            let tempLetter = s[x][y];
+            temp += tempLetter;
+
+            let i = 1;
+            while (tempLetter === s[x][y + i]) {
                 y++;
-            } else {
-                temp += s[x][y];
+                i++;
             }
         }
         result.push(temp);
