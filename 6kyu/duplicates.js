@@ -6,13 +6,8 @@ function dup(s) {
     for (let x = 0; x < s.length; x++) {
         let temp = "";
         for (let y = 0; y < s[x].length; y++) {
-            let tempLetter = s[x][y];
-            temp += tempLetter;
-
-            let i = 1;
-            while (tempLetter === s[x][y + i]) {
-                y++;
-                i++;
+            if (temp[temp.length - 1] != s[x][y]) {
+                temp += s[x][y];
             }
         }
         result.push(temp);
