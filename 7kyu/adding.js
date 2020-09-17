@@ -9,11 +9,15 @@ function add(num1, num2) {
     let ind = numArr1.length > numArr2.length ? numArr1.length : numArr2.length;
 
     for (let x = 0; x < ind; x++) {
-        if(numArr)
-        result.push(+numArr1[x] + +numArr2[x]);
+        if(numArr1[x] && numArr2[x]) {
+            result.push(+numArr1[x] + +numArr2[x]);
+        } else if (numArr1[x]) {
+            result.push(numArr1[x]);
+        } else {
+            result.push(numArr2[x]);
+        }
     }
-    console.log(result);
-    return result.reverse().join('');
+    return +result.reverse().join('');
 }
 
 
