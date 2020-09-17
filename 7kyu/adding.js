@@ -2,7 +2,18 @@
 
 
 function add(num1, num2) {
-    
+    let numArr1 = String(num1).split('').reverse();
+    let numArr2 = String(num2).split('').reverse();
+    let result = [];
+
+    let ind = numArr1.length > numArr2.length ? numArr1.length : numArr2.length;
+
+    for (let x = 0; x < ind; x++) {
+        if(numArr)
+        result.push(+numArr1[x] + +numArr2[x]);
+    }
+    console.log(result);
+    return result.reverse().join('');
 }
 
 
