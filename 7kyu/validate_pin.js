@@ -4,15 +4,17 @@
 
 
 function validatePIN (pin) {
-    if (pin.length == 4 || pin.length == 6) {
-        for (let x = 0; x < pin.length; x++) {
-            if (pin.charCodeAt(x) < 48 || pin.charCodeAt(x) > 57) {
-                return false;
-            }
-        }
-        return true;
-    }
-    return false;
+    // if (pin.length == 4 || pin.length == 6) {
+    //     for (let x = 0; x < pin.length; x++) {
+    //         if (pin.charCodeAt(x) < 48 || pin.charCodeAt(x) > 57) {
+    //             return false;
+    //         }
+    //     }
+    //     return true;
+    // }
+    // return false;
+
+    
 }
 
 
