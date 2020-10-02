@@ -5,16 +5,16 @@ function doubles(s){
     let tempStr = '';
     let result = '';
 
-    for (let x = 0; x < s.length; x++) {
+    for (let x = 0; x < s.length; ) {
         let temp = s[x];
-        while (s[x] == temp) {
+        do {
             tempStr += s[x];
-            x++;
-        }
+            x++
+        }while (s[x] == temp);
+        
         if (tempStr.length % 2 != 0) {
             result += temp;
         }
-        console.log(tempStr);
         tempStr = '';
     }
     return result;
@@ -22,3 +22,4 @@ function doubles(s){
 
 
 console.log(doubles('zzzzykkkd')); //,'ykd')
+console.log(doubles('vvvvvoiiiiin')); //,'voin')
