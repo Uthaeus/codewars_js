@@ -5,14 +5,14 @@ function sayMeOperations(str) {
     let arr = str.split(' ');
     let result = [];
     
-    for (let x = 0; x < str.length - 2; x++) {
+    for (let x = 0; x < arr.length - 2; x++) {
         if (+arr[x] + +arr[x + 1] == +arr[x + 2]) {
             result.push('addition');
         } else if (+arr[x] - +arr[x + 1] == +arr[x + 2]) {
             result.push('subtraction');
         } else if (+arr[x] * +arr[x + 1] == +arr[x + 2]) {
             result.push('multiplication');
-        } else if (+arr[x] / +arr[x + 1] == +arr[x + 2]) {
+        } else {
             result.push('division');
         }
     }
