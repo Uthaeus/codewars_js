@@ -2,22 +2,17 @@
 
 
 function doubles(s){
-    let tempStr = '', result = '';
+    let flag = false;
 
     for (let x = 0; x < s.length; ) {
-        let temp = s[x];
-        do {
-            tempStr += s[x];
+        if (s[x] == s[x + 1]) {
+            s = s.slice(0, x) + s.slice(x + 2, s.length);
+            flag = true;
+        } else {
             x++;
-        } while (s[x] == temp);
-
-        if (tempStr.length % 2 != 0) {
-            result += temp;
         }
-        tempStr = '';
     }
-    console.log(result);
-    return result;
+    return !flag ? s : doubles(s);
 }
 
 
