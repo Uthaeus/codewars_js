@@ -2,7 +2,7 @@
 
 
 function solve(arr){
-    let largest = 0;
+    let largest = {'hr':0, 'min':0};
 
     if (arr.length == 1) {
         return "23:59";
@@ -23,9 +23,23 @@ function solve(arr){
                 hr1 = 0;
             }
             hrDiff++;
-            console.log(hrDiff);
+        }
+        minDiff = (60 - +min1) + +min2;
+        if (minDiff >= 60) {
+            hrDiff++;
+            minDiff = minDiff - 60;
+        }
+
+        if (hrDiff > largest['hr']) {
+            largest['hr'] = hrDiff;
+            largest['min'] = minDiff;
+        } else if (hrDiff == largest['hr']) {
+            if (minDiff > largest['min']) {
+                largest['min'] = minDiff;
+            }
         }
     }
+    return `${largest['hr']}:${largest['min']}`;
 }
 
 
