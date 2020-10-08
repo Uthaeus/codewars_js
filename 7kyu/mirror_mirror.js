@@ -2,7 +2,7 @@
 
 
 function mirror(data) {
-    let newArr = [...data].sort((a, b) => a > b);
+    let newArr = [...data].sort((a, b) => a - b);
     let added = newArr.slice(0, newArr.length - 1).reverse();
 
     return newArr.concat(added);
