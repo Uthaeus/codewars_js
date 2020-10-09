@@ -5,7 +5,7 @@ function solve(arr){
     let sorted = arr.sort((a, b) => b - a);
     let result = [];
 
-    for (let x = 0; x <= arr.length / 2; x++) {
+    for (let x = 0; x < arr.length / 2; x++) {
         let tempLength = sorted.length - 1;
         result.push(sorted[x]);
         if (result.length < sorted.length) {
@@ -18,3 +18,4 @@ function solve(arr){
 
 
 console.log(solve([15,11,10,7,12])); //,[15,7,12,10,11])
+console.log(solve([78,79,52,87,16,74,31,63,80])); //,[87,16,80,31,79,52,78,63,74])
