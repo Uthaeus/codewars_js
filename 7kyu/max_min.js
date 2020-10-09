@@ -2,9 +2,18 @@
 
 
 function solve(arr){
-    let sorted = arr.sort((a, b) => a - b);
+    let sorted = arr.sort((a, b) => b - a);
+    let result = [];
 
-    return sorted;
+    for (let x = 0; x <= arr.length / 2; x++) {
+        let tempLength = sorted.length - 1;
+        result.push(sorted[x]);
+        if (result.length < sorted.length) {
+            result.push(sorted[tempLength - x]);
+        }
+    }
+
+    return result;
 };
 
 
