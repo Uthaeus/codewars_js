@@ -3,13 +3,20 @@
 
 function leastLarger(a,i) {
     let currentI = -1;
-    let currentV;
+    let currentV = false;
 
     for (let x = i; x < a.length; x++) {
-        if (a[x] > a[i]) {
-            currentV 
+        if (a[x] > a[i] && currentV) {
+            if (a[x] < currentV) {
+                currentV = a[x];
+                currentI = x;
+            } 
+        } else if (a[x] > a[i]) {
+            currentV = a[x];
+            currentI = x;
         }
     }
+    return currentI;
 }
 
 
